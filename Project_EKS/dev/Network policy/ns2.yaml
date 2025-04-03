@@ -1,0 +1,47 @@
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: devapp2
+  namespace: dev2
+spec:
+  containers:
+    - name: devcon2
+      image: karty11/mediplus:v1
+      imagePullPolicy: Always
+      ports:
+        - containerPort: 80
+          name: apache
+          protocol: TCP
+      resources:
+        requests:
+          memory: "200Mi"
+          cpu: "200m"
+        limits:
+          memory: "300Mi"
+          cpu: "400m"
+
+
+
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: devapp3
+  namespace: dev2
+spec:
+  containers:
+    - name: devcon3
+      image: karty11/mediplus:v1
+      imagePullPolicy: Always
+      ports:
+        - containerPort: 80
+          name: apache
+          protocol: TCP
+      resources:
+        requests:
+          memory: "200Mi"
+          cpu: "200m"
+        limits:
+          memory: "300Mi"
+          cpu: "400m"

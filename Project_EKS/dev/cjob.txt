@@ -1,0 +1,17 @@
+apiVersion: batch/v1
+kind: Cronjob
+metadata:
+  name: helloworld
+  namespace: devproject
+spec:
+  #ttlSecondsAfterFinished: 50
+  schedule: "* * * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+      containers:
+        -  name: busybox
+           image: busybox
+           command: ["echo", "Hello kubernetes!!!"]
+      restartPolicy: never

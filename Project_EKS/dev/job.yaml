@@ -1,0 +1,14 @@
+apiVersion: batch/v1
+kind: job
+metadata:
+  name: helloworld
+  namespace: devproject
+spec:
+  ttlSecondsAfterFinished: 50
+  template:
+    spec:
+      containers:
+      -  name: busybox
+         image: busybox
+         command: ["echo", "Hello kubernetes!!!"]
+      restartPolicy: never
